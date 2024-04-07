@@ -16,7 +16,7 @@ cd nrs-app
 
 ## Step 2: Set up the .env file
 
-In the `frontend` directory, create a `.env` file and configure the environment variable `VUE_APP_API_URL` with the IP address or hostname of the backend:
+In the `frontend` directory, edit the `.env` file and configure the environment variable `VUE_APP_API_URL` with the IP address or hostname of the backend:
 
 ```plaintext
 VUE_APP_API_URL=http://localhost:3003
@@ -30,7 +30,7 @@ In the root directory of the repository, run the following command to start the 
 docker-compose up --build
 ```
 
-This command will download the necessary images, build the containers, and start the application.
+This command will download the necessary images, build the containers, crete network and start the application.
 
 ## Step 4: Test the backend
 
@@ -71,5 +71,6 @@ If you dont found the data in the tables, you can try refreshing the data by fol
     ```bash
     docker exec -i <CONTAINER_NAME> psql -U postgres -d statesdb < /database/dump.sql
     ```
+3. You can find the database password in /database/Dockerfile as POSTGRES_PASSWORD
 
 Replace `<CONTAINER_NAME>` with the actual name of your PostgreSQL container. This command will execute the `dump.sql` file to load the data into the database tables.
